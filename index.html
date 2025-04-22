@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Roster Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Soccer Roster Generator</h1>
+        </header>
+        
+        <main>
+            <div class="container">
+                <div class="left-column">
+                    <div class="player-management">
+                        <h2>Team Players</h2>
+                        <div class="player-list">
+                            <ul id="players"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="game-setup">
+                        <h2>Generate Roster</h2>
+                        <p>Select players who are available for the game:</p>
+                        <div id="available-players"></div>
+                        <button id="generate-roster">Generate 7-Player Roster</button>
+                        
+                        <div id="goalie-selection" class="hidden">
+                            <!-- Goalie selection will be rendered here -->
+                        </div>
+                        
+                        <div id="generated-roster" class="hidden">
+                            <div class="roster-header">
+                                <h3>Generated Roster</h3>
+                                <button id="refresh-lineup" class="refresh-btn" title="Re-randomize current lineup">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <ul id="roster-list"></ul>
+                        </div>
+                        
+                        <div id="game-controls" class="hidden">
+                            <h3>Game Controls</h3>
+                            <div class="button-group">
+                                <button id="start-game" class="game-btn">Start Game</button>
+                                <button id="substitute-players" class="game-btn">Substitute Players</button>
+                                <button id="next-quarter" class="game-btn">Next Quarter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div id="game-status" class="hidden">
+                        <h3>Game not in progress</h3>
+                    </div>
+                    
+                    <div id="game-history" class="hidden">
+                        <h3>Game History</h3>
+                        <p>No history yet</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Soccer Roster Generator &copy; 2023</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html> 

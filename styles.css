@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7fc;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1e88e5;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.left-column {
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.player-management, .game-setup, #game-status, #game-history, #goalie-selection {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #1e88e5;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    margin: 1rem 0;
+    color: #555;
+}
+
+h4 {
+    color: #1e88e5;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1976d2;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#generate-roster {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 4px;
+    background-color: #43a047;
+}
+
+#generate-roster:hover {
+    background-color: #388e3c;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.game-btn {
+    border-radius: 4px;
+    width: 100%;
+}
+
+#start-game {
+    background-color: #43a047;
+}
+
+#start-game:hover {
+    background-color: #388e3c;
+}
+
+#substitute-players {
+    background-color: #ff9800;
+}
+
+#substitute-players:hover {
+    background-color: #f57c00;
+}
+
+#next-quarter {
+    background-color: #9c27b0;
+}
+
+#next-quarter:hover {
+    background-color: #7b1fa2;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.position {
+    font-weight: bold;
+    width: 160px;
+    color: #1e88e5;
+}
+
+.player-name {
+    flex: 1;
+}
+
+.player-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.player-checkbox input {
+    margin-right: 0.5rem;
+}
+
+.player-checkbox input:disabled + label {
+    color: #888;
+}
+
+.goalie-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.goalie-radio input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.confirm-goalie {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 4px;
+    background-color: #fb8c00;
+}
+
+.confirm-goalie:hover {
+    background-color: #ef6c00;
+}
+
+.hidden {
+    display: none;
+}
+
+#roster-list li {
+    background-color: #e8f5e9;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #c8e6c9;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+#roster-list .position {
+    min-width: 160px;
+}
+
+.goalie-position {
+    background-color: #e3f2fd !important;
+    border: 1px solid #bbdefb !important;
+}
+
+.goalie-info {
+    background-color: #e3f2fd;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #bbdefb;
+    margin-top: 0.5rem;
+}
+
+.goalie-info strong {
+    color: #1565c0;
+}
+
+.game-status-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #43a047;
+    margin: 0.5rem 0;
+}
+
+.history-item {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #1e88e5;
+}
+
+.history-players {
+    margin-top: 0.5rem;
+}
+
+.history-players li {
+    background-color: white;
+    margin-bottom: 0.3rem;
+    border-radius: 4px;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.history-players .position {
+    min-width: 160px;
+    display: inline-block;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+/* Add responsive adjustments for smaller screens */
+@media (max-width: 500px) {
+    .position {
+        width: 140px;
+        min-width: 140px;
+        font-size: 0.9rem;
+    }
+    
+    .player-name {
+        font-size: 0.9rem;
+    }
+    
+    li {
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+.roster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.refresh-btn {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.refresh-btn:hover {
+    background-color: #1976d2;
+    transform: rotate(30deg);
+}
+
+.refresh-btn:active {
+    transform: rotate(180deg);
+}
+
+.refresh-btn i {
+    font-size: 1rem;
+} 
